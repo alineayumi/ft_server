@@ -6,7 +6,7 @@
 #    By: afukuhar <afukuhar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 14:59:24 by afukuhar          #+#    #+#              #
-#    Updated: 2020/10/01 14:26:37 by afukuhar         ###   ########.fr        #
+#    Updated: 2020/10/04 17:25:02 by afukuhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ nginx \
 mariadb-server \
 php-fpm php-mysql 
 
-EXPOSE 80
+EXPOSE 80 443
 
-CMD ["nginx", "-g", "daemon off;"]
+COPY srcs /tmp/
+
+CMD bash /tmp/run_ftserver.sh

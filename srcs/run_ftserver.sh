@@ -27,6 +27,7 @@ echo " --------------- "
 echo "| SETTING NGINX |"
 echo " --------------- "
 mv /tmp/nginx.conf /etc/nginx/sites-available/localhost
+mv /tmp/info.php /var/www/localhost/
 mv /tmp/index.html var/www/localhost/
 ln -s /etc/nginx/sites-available/localhost etc/nginx/sites-enabled/localhost
 rm -rf /etc/nginx/sites-enabled/default
@@ -41,7 +42,12 @@ GRANT ALL ON db.* TO 'root'@'localhost' IDENTIFIED BY 'mysupersecretpassword';
 FLUSH PRIVILEGES;
 EOF
 
+echo " ------------- "
+echo "| SETTING PHP |"
+echo " ------------- "
+
 # Restart nginx after settings
+service php7.3-fpm start
 service nginx restart
 
 echo " -------------- "

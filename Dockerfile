@@ -6,7 +6,7 @@
 #    By: afukuhar <afukuhar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 14:59:24 by afukuhar          #+#    #+#              #
-#    Updated: 2020/10/07 14:41:51 by afukuhar         ###   ########.fr        #
+#    Updated: 2020/10/07 15:13:24 by afukuhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ apt-utils vim wget openssl
 
 RUN apt-get update && apt-get install -y \
 nginx \
-mariadb-server
+mariadb-server \
+php-fpm php-mysql
 
 EXPOSE 80 443
 

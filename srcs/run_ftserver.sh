@@ -31,6 +31,16 @@ mv /tmp/index.html var/www/localhost/
 ln -s /etc/nginx/sites-available/localhost etc/nginx/sites-enabled/localhost
 rm -rf /etc/nginx/sites-enabled/default
 
+echo " --------------- "
+echo "| SETTING MYSQL |"
+echo " --------------- "
+service mysql start
+mysql -u root --skip-password <<EOF
+CREATE DATABASE db;
+GRANT ALL ON db.* TO 'root'@'localhost' IDENTIFIED BY 'mysupersecretpassword';
+FLUSH PRIVILEGES;
+EOF
+
 # Restart nginx after settings
 service nginx restart
 

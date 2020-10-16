@@ -1,8 +1,8 @@
 
 -- Creating a db to wordpress and a user that has access to it
-CREATE DATABASE db_wordpress;
+CREATE DATABASE wordpress;
 CREATE USER 'wordpress'@'localhost';
-GRANT ALL PRIVILEGES ON db_wordpress.* TO 'wordpress'@'localhost' IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost' IDENTIFIED BY '123456';
 FLUSH PRIVILEGES;
 
 -- https://mariadb.com/kb/en/grant/

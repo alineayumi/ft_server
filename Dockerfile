@@ -6,7 +6,7 @@
 #    By: afukuhar <afukuhar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 14:59:24 by afukuhar          #+#    #+#              #
-#    Updated: 2020/10/12 16:27:33 by afukuhar         ###   ########.fr        #
+#    Updated: 2020/10/16 14:15:45 by afukuhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,18 @@
 
 FROM debian:buster
 
+# Installing secondary packages
 RUN apt-get update && apt-get install -y \
+debconf debconf-utils curl \
 apt-utils vim wget openssl
 
+# Installing nginx
+RUN apt-get update && apt-get install -y nginx
+
+# Installing php packages for nginx and wordpress
 RUN apt-get update && apt-get install -y \
-nginx \
-php-fpm php-mysql
+php-fpm php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl \
+php-mysql php-cli php-ldap php-zip php-curl
 
 # SSL key
 RUN		mkdir /etc/nginx/ssl
@@ -48,11 +54,24 @@ RUN		chmod -R 755 /var/www/*
 # Create server folder
 RUN		mkdir /var/www/localhost
 
+COPY	srcs/index.html /var/www/localhost/
 COPY	srcs/nginx/nginx.conf /etc/nginx/sites-available/localhost
 COPY	srcs/php/info.php /var/www/localhost/
-COPY	srcs/php/todo_list.php /var/www/localhost/
 RUN		ln -s /etc/nginx/sites-available/localhost etc/nginx/sites-enabled/localhost
 RUN		rm -rf /etc/nginx/sites-enabled/default
+
+# SETTING PHPMYADMIN
+RUN		mkdir /var/www/localhost/phpmyadmin
+RUN		wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
+RUN		tar -xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz --strip-components 1 -C /var/www/localhost/phpmyadmin
+COPY	srcs/php/phpmyadmin.inc.php /var/www/localhost/phpmyadmin/config.inc.php
+
+# SETTING WORDPRESS
+RUN		cd /tmp
+RUN		wget -c https://wordpress.org/latest.tar.gz
+RUN		tar -xvzf latest.tar.gz
+RUN		mv wordpress/ /var/www/localhost
+COPY	srcs/wordpress/wp-config.php /var/www/localhost/wordpress
 
 # Run after settings
 COPY	srcs/run_ftserver.sh .

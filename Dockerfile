@@ -6,7 +6,7 @@
 #    By: afukuhar <afukuhar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 14:59:24 by afukuhar          #+#    #+#              #
-#    Updated: 2020/10/16 14:15:45 by afukuhar         ###   ########.fr        #
+#    Updated: 2020/10/16 15:18:20 by afukuhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@ FROM debian:buster
 
 # Installing secondary packages
 RUN apt-get update && apt-get install -y \
-debconf debconf-utils curl \
-apt-utils vim wget openssl
+curl apt-utils vim wget openssl
 
 # Installing nginx
 RUN apt-get update && apt-get install -y nginx
@@ -62,8 +61,8 @@ RUN		rm -rf /etc/nginx/sites-enabled/default
 
 # SETTING PHPMYADMIN
 RUN		mkdir /var/www/localhost/phpmyadmin
-RUN		wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
-RUN		tar -xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz --strip-components 1 -C /var/www/localhost/phpmyadmin
+RUN		wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.tar.gz
+RUN		tar -xvf phpMyAdmin-5.0.4-all-languages.tar.gz --strip-components 1 -C /var/www/localhost/phpmyadmin
 COPY	srcs/php/phpmyadmin.inc.php /var/www/localhost/phpmyadmin/config.inc.php
 
 # SETTING WORDPRESS

@@ -6,7 +6,7 @@
 #    By: afukuhar <afukuhar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 14:59:24 by afukuhar          #+#    #+#              #
-#    Updated: 2020/10/16 15:18:20 by afukuhar         ###   ########.fr        #
+#    Updated: 2020/10/17 02:30:35 by afukuhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@
 # https://hub.docker.com/_/debian
 
 FROM debian:buster
+
+ENV AUTOINDEX on
 
 # Installing secondary packages
 RUN apt-get update && apt-get install -y \
@@ -53,7 +55,6 @@ RUN		chmod -R 755 /var/www/*
 # Create server folder
 RUN		mkdir /var/www/localhost
 
-COPY	srcs/index.html /var/www/localhost/
 COPY	srcs/nginx/nginx.conf /etc/nginx/sites-available/localhost
 COPY	srcs/php/info.php /var/www/localhost/
 RUN		ln -s /etc/nginx/sites-available/localhost etc/nginx/sites-enabled/localhost

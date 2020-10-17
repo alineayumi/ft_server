@@ -1,7 +1,10 @@
 #!bin/bash
 
-if [ "$AUTOINDEX" = "off" ] ;
-then sed -i "s/autoindex on;/autoindex off;/g" /etc/nginx/sites-available/localhost ; fi
+if [ "$AUTOINDEX" = "off" ] 
+then
+	sed -i "s/autoindex on;/autoindex off;/g" /etc/nginx/sites-available/localhost 
+	mv tmp/index.html /var/www/localhost/
+fi
 
 apt-get update && apt-get -y upgrade
 service mysql start

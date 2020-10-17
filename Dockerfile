@@ -6,7 +6,7 @@
 #    By: afukuhar <afukuhar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 14:59:24 by afukuhar          #+#    #+#              #
-#    Updated: 2020/10/17 02:30:35 by afukuhar         ###   ########.fr        #
+#    Updated: 2020/10/17 14:08:21 by afukuhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ RUN		mkdir /var/www/localhost
 
 COPY	srcs/nginx/nginx.conf /etc/nginx/sites-available/localhost
 COPY	srcs/php/info.php /var/www/localhost/
+COPY	srcs/index.html /tmp/
 RUN		ln -s /etc/nginx/sites-available/localhost etc/nginx/sites-enabled/localhost
 RUN		rm -rf /etc/nginx/sites-enabled/default
 

@@ -41,15 +41,22 @@ Remove and clean all running containers
 
 ### Exploring it
 Once your container is running, access it on your browser at ```https://localhost/```
+
+#### Autoindex off
 If the autoindex is turned on, you will see a tree with the directories of your server:
 (insert image)
+
+#### Autoindex on
 Otherwise, if autoindex is off, will show a page like this:
 (insert image)
+
+#### PhpMyAdmin
 You can access databases with 2 users in phpMyAdmin:
 ```https://localhost/phpmyadmin```
 * admin user (has access to all databases)
 * wordpress user (can only access wordpress's tables)
-Accessing wordpress:
+
+#### Wordpress:
 ```https://localhost/wordpress```
 The first time you enter in this url, it will appear a page to create your wordpress page identified by a login and password
 (insert image)

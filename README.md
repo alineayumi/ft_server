@@ -43,7 +43,7 @@ Remove and clean all running containers
 Once your container is running, access it on your browser at ```https://localhost/```
 
 #### Autoindex off 
-If the autoindex is turned off, you will see a tree with the directories of your server:
+If the autoindex is turned off, you will see this page:
 ![root_autoindexoff](imgs/root_autoindexoff.png)
 
 #### Autoindex on

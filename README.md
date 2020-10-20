@@ -57,9 +57,7 @@ https://localhost/phpmyadmin
 ```
 ![php_login](imgs/phpMyAdmin_login.png)
 * admin user (has access to all databases)
-![php_admin](imgs/phpMyAdmin_adminUser.png)
 * wordpress user (can only access wordpress's tables)
-![php_wordpress](imgs/phpMyAdmin_wordpressUser.png)
 
 #### Wordpress:
 ```

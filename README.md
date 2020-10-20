@@ -43,11 +43,12 @@ Remove and clean all running containers
 Once your container is running, access it on your browser at ```https://localhost/```
 
 #### Autoindex off 
-If the autoindex is turned on, you will see a tree with the directories of your server:
+If the autoindex is turned off, you will see a tree with the directories of your server:
 ![root_autoindexoff](imgs/root_autoindexoff.png)
 
 #### Autoindex on
-Otherwise, if autoindex is off, will show a page like this:
+Otherwise, if autoindex is on, will show the structure of files inside the server folder.
+You can navigate betweeen folders until it finds a file that builds the page:
 ![root_autoindexon](imgs/root_autoindexon.png)
 
 #### PhpMyAdmin

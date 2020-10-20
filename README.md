@@ -53,16 +53,16 @@ Otherwise, if autoindex is off, will show a page like this:
 #### PhpMyAdmin
 You can access databases with 2 users in phpMyAdmin:
 ```https://localhost/phpmyadmin```
-![php_login] (imgs/phpMyAdmin_login.png)
+![php_login](imgs/phpMyAdmin_login.png)
 * admin user (has access to all databases)
-![php_admin] (imgs/phpMyAdmin_adminUser.png)
+![php_admin](imgs/phpMyAdmin_adminUser.png)
 * wordpress user (can only access wordpress's tables)
-![php_wordpress] (imgs/phpMyAdmin_wordpressUser.png)
+![php_wordpress](imgs/phpMyAdmin_wordpressUser.png)
 
 #### Wordpress:
 ```https://localhost/wordpress```
 The first time you enter in this url, it will appear a page to create your wordpress page identified by a login and password
-![wordpress_register] (imgs/wordpress_registration.png)
+![wordpress_register](imgs/wordpress_registration.png)
 So after that you can login with the credentials you just created:
 ![wordpress_login] (imgs/wordpress_login.png)
 And now start to create/delete posts :D

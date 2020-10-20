@@ -44,15 +44,17 @@ Once your container is running, access it on your browser at ```https://localhos
 
 #### Autoindex off 
 If the autoindex is turned on, you will see a tree with the directories of your server:
-![root_autoindexoff] (imgs/root_autoindexoff.png)
+![root_autoindexoff](imgs/root_autoindexoff.png)
 
 #### Autoindex on
 Otherwise, if autoindex is off, will show a page like this:
-![root_autoindexon] (imgs/root_autoindexon.png)
+![root_autoindexon](imgs/root_autoindexon.png)
 
 #### PhpMyAdmin
 You can access databases with 2 users in phpMyAdmin:
-```https://localhost/phpmyadmin```
+```
+https://localhost/phpmyadmin
+```
 ![php_login](imgs/phpMyAdmin_login.png)
 * admin user (has access to all databases)
 ![php_admin](imgs/phpMyAdmin_adminUser.png)
@@ -60,14 +62,16 @@ You can access databases with 2 users in phpMyAdmin:
 ![php_wordpress](imgs/phpMyAdmin_wordpressUser.png)
 
 #### Wordpress:
-```https://localhost/wordpress```
+```
+https://localhost/wordpress
+```
 The first time you enter in this url, it will appear a page to create your wordpress page identified by a login and password
 ![wordpress_register](imgs/wordpress_registration.png)
 So after that you can login with the credentials you just created:
-![wordpress_login] (imgs/wordpress_login.png)
+![wordpress_login](imgs/wordpress_login.png)
 And now start to create/delete posts :D
 Using the dashboard:
-![wordpress_dash] (imgs/wordpress_dash.png)
+![wordpress_dash](imgs/wordpress_dash.png)
 Or even the site:
-![wordpress_site] (imgs/wordpress_site.png)
+![wordpress_site](imgs/wordpress_site.png)
 You can also manipulate data from phpMyAdmin, accessing the databases from there and editing

@@ -65,11 +65,15 @@ https://localhost/wordpress
 ```
 The first time you enter in this url, it will appear a page to create your wordpress page identified by a login and password
 ![wordpress_register](imgs/wordpress_registration.png)
+
 So after that you can login with the credentials you just created:
 ![wordpress_login](imgs/wordpress_login.png)
+
 And now start to create/delete posts :D
+
 Using the dashboard:
 ![wordpress_dash](imgs/wordpress_dash.png)
+
 Or even the site:
 ![wordpress_site](imgs/wordpress_site.png)
-You can also manipulate data from phpMyAdmin, accessing the databases from there and editing
+You can also manipulate data from phpMyAdmin, accessing the databases from there and editing :D 
